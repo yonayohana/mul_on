@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas HTML : My Fisrt Canvas App</title>
+</head>
+<style type="text/css">
+	canvas{
+		background: aquamarine;
+		border : solid 1px;
+	}
+</style>
+<body>
+
+	<canvas width="800" height="450" id="canvas"></canvas>
+
+	<script type="text/javascript">
+		var c=document.getElementById('canvas');
+		var ctx=c.getContext('2d');
+		
+		//Lingkaran_besar
+		//var ctx=c.getContext('2d');
+		ctx.beginPath();
+		ctx.arc(400, 225, 130, 0, 2 * Math.PI);
+		ctx.fillStyle = "#B22222";
+		ctx.lineWidth = 4;
+		ctx.fill();
+		ctx.strokeStyle ="#FFFFFF";
+		ctx.stroke();
+
+		//lingkaran_kecil
+		ctx.beginPath();
+		ctx.arc(400, 225, 90, 0, 2*Math.PI);
+		ctx.fillStyle = "#FF8C00";
+		ctx.fill();
+
+		//Segi empat
+		ctx.beginPath();
+		ctx.fillStyle = "#008080";		
+		ctx.fillRect(360,185,80,80);
+		ctx.lineWidth = 4;
+		ctx.strokeRect(360,185,80,80);
+		ctx.strokeStyle = "#FFFFFF";
+		ctx.stroke();
+		
+		
+	    //segitiga_kiri
+		ctx.beginPath();
+		ctx.moveTo(50,225);
+		ctx.lineTo(150,120);
+		ctx.lineTo(150,330);
+		ctx.fillStyle = "#3CB371";
+		ctx.fill();
+
+		//segitiga_kanan
+		ctx.beginPath();
+		ctx.moveTo(750,225);
+		ctx.lineTo(650,120);
+		ctx.lineTo(650,330);
+		ctx.fillStyle = "#3CB371";
+		ctx.fill();
+
+	</script>
+
+</body>
+</html>
