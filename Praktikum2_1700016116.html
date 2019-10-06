@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>
+            Click Mouse and draw line 
+        </title>
+        <style type="text/css">
+        	canvas{
+        		background-color: #ccc;
+        	}
+        </style>
+        
+    </head>
+    <body>
+    	<canvas height="450" width="800" id="canvas"></canvas>
+    	<script type="text/javascript">
+    		var c=document.getElementById('canvas');
+    		var ctx=c.getContext('2d');
+
+    		//ctx.lineTo(100,200);
+
+    		//ctx.lineWidth=2;
+    		//ctx.strokeStyle='black'
+    		//ctx.stroke();
+
+    		document.body.addEventListener('mousedown',drawline);
+
+    		function drawline(e)
+    		{
+    			console.log(e.offsetX);
+                var x = e.offsetX;
+                var y = e.offsetY;
+                ctx.lineTo(x, y);
+                ctx.lineWidth = "2";
+                ctx.strokeStyle = "brown";
+                ctx.stroke();
+
+    		}
+            document.body.addEventListener('keydown', enter);
+            
+                function enter(e) {
+                var code = e.keyCode;
+                if (code == 13){
+                ctx.strokeStyle = "black";
+                ctx.fillStyle = "#00FF00";
+                ctx.fill();
+                ctx.stroke();
+                }
+            }
+
+    	</script>
+    </body>
+</html>
